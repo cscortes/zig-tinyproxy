@@ -25,7 +25,7 @@
 #include "hsearch.h"
 #include "sblist.h"
 #include "acl.h"
-
+#include "fixmacro.h"
 /*
  * Stores a HTTP header created using the AddHeader directive.
  */

@@ -39,6 +39,7 @@
 #include "connect-ports.h"
 #include "basicauth.h"
 #include "conf-tokens.h"
+#include "fixmacro.h"
 
 #ifdef LINE_MAX
 #define TP_LINE_MAX LINE_MAX

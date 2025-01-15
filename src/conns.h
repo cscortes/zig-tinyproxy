@@ -23,6 +23,7 @@
 
 #include "main.h"
 #include "hsearch.h"
+#include "fixmacro.h"
 
 /*
  * Connection Definition

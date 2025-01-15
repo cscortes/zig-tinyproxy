@@ -31,6 +31,7 @@
 #include "reqs.h"
 #include "text.h"
 #include "conf.h"
+#include "orderedmap.h"
 
 /*
  * Build a URL from parts.

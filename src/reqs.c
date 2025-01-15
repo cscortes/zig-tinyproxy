@@ -48,10 +48,12 @@
 #include "transparent-proxy.h"
 #include "upstream.h"
 #include "connect-ports.h"
-#include "conf.h"
 #include "basicauth.h"
 #include "loop.h"
 #include "mypoll.h"
+
+#include "fixmacro.h"
+#include "conf.h"
 
 /*
  * Maximum length of a HTTP line
@@ -558,22 +560,22 @@ static int pull_client_data (struct conn_s *connptr, long int length, int iehack
                                     "to non-blocking: %s", strerror(errno));
                         goto ERROR_EXIT;
                 }
-        
+
                 len = recv (connptr->client_fd, buffer, 2, MSG_PEEK);
-        
+
                 ret = socket_blocking (connptr->client_fd);
                 if (ret != 0) {
                         log_message(LOG_ERR, "Failed to set the client socket "
                                     "to blocking: %s", strerror(errno));
                         goto ERROR_EXIT;
                 }
-        
+
                 if (len < 0 && errno != EAGAIN)
                         goto ERROR_EXIT;
-        
+
                 if ((len == 2) && CHECK_CRLF (buffer, len)) {
                         ssize_t bytes_read;
-        
+
                         bytes_read = read (connptr->client_fd, buffer, 2);
                         if (bytes_read == -1) {
                                 log_message
@@ -1583,7 +1585,7 @@ static void auth_error(struct conn_s *connptr, int code) {
  * 	- rjkaes
 
  * this function is called directly from child_thread() with the newly
- * received fd from accept(). 
+ * received fd from accept().
  */
 void handle_connection (struct conn_s *connptr, union sockaddr_union* addr)
 {

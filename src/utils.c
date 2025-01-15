@@ -25,6 +25,7 @@
 
 #include "main.h"
 
+#include "fixmacro.h"
 #include "conns.h"
 #include "heap.h"
 #include "http-message.h"

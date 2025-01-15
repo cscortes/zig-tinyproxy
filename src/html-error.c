@@ -29,8 +29,10 @@
 #include "html-error.h"
 #include "network.h"
 #include "utils.h"
-#include "conf.h"
 #include "log.h"
+
+#include "fixmacro.h"
+#include "conf.h"
 
 #include <regex.h>
 
@@ -174,7 +176,7 @@ int send_http_error_message (struct conn_s *connptr)
 
 	/* according to rfc7235, the 407 error must be accompanied by
            a Proxy-Authenticate header field. */
-        const char *auth_str_type = 
+        const char *auth_str_type =
                 connptr->error_number == 407 ? "Proxy-Authenticate" :
                 (connptr->error_number == 401 ? "WWW-Authenticate" : "");
 
@@ -182,7 +184,7 @@ int send_http_error_message (struct conn_s *connptr)
         char* auth_str_add = NULL;
 
         if (auth_str_type[0] != 0) {
-                int auth_str_size = snprintf (NULL, 0, auth_str_tpl, 
+                int auth_str_size = snprintf (NULL, 0, auth_str_tpl,
                                         auth_str_type, config->basicauth_realm) + 1;
                 if (auth_str_size > 0) {
                         auth_str_add = safemalloc (auth_str_size);

@@ -30,8 +30,10 @@
 #include "heap.h"
 #include "log.h"
 #include "reqs.h"
+#include "fixmacro.h"
 #include "conf.h"
 #include "sblist.h"
+#include <sysexits.h>
 
 #define FILTER_BUFFER_LEN (512)
 

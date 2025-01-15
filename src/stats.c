@@ -32,8 +32,9 @@
 #include "html-error.h"
 #include "stats.h"
 #include "utils.h"
-#include "conf.h"
 #include <pthread.h>
+#include "fixmacro.h"
+#include "conf.h"
 
 struct stat_s {
         unsigned long int num_reqs;

@@ -25,10 +25,11 @@
 #include "main.h"
 
 #include "buffer.h"
-#include "conns.h"
 #include "heap.h"
 #include "log.h"
 #include "stats.h"
+#include "fixmacro.h"
+#include "conns.h"
 
 void conn_struct_init(struct conn_s *connptr) {
         connptr->error_number = -1;

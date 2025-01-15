@@ -33,7 +33,6 @@
 
 #include "anonymous.h"
 #include "buffer.h"
-#include "conf.h"
 #include "daemon.h"
 #include "heap.h"
 #include "filter.h"
@@ -44,6 +43,9 @@
 #include "sock.h"
 #include "stats.h"
 #include "utils.h"
+#include <sysexits.h>
+#include "fixmacro.h"
+#include "conf.h"
 
 /*
  * Global Structures
