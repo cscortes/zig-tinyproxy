@@ -66,7 +66,7 @@ config_directive_find (register const char *str, register size_t len)
 		if(!strcasecmp(str, wordlist[i].name))
 			return &wordlist[i];
 	}
-	return 0;
+	return NULL;
 }
 
 #endif
